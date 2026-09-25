@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: mini-devops-app
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: mini-devops-app
+
+  template:
+    metadata:
+      labels:
+        app: mini-devops-app
+
+    spec:
+      containers:
+        - name: mini-devops-app
+          image: mini-devops-app:latest
+          imagePullPolicy: Never

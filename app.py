@@ -1,6 +1,13 @@
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return str(suma(2, 3))
+
 def suma(a, b):
     return a + b
 
 
 if __name__ == "__main__":
-    print(suma(2, 3))
+    app.run(host="0.0.0.0", port=5000)
